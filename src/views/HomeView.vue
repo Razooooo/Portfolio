@@ -244,8 +244,8 @@ const projects = ref<Project[]>([
       "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
-    documentationUrl: '/docs/Livrable NurseCare.pdf',
-    demoUrl: '/docs/DocTechniqueNurseCare.docx.pdf',
+    documentationUrl: './docs/Livrable NurseCare.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
   },
   {
     id: 2,
@@ -254,8 +254,8 @@ const projects = ref<Project[]>([
       'Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
     image: './images/delivereasy.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
-    documentationUrl: '/docs/Livrable projet Deliver.pdf',
-    demoUrl: '/docs/DocTechniqueDeliver.pdf',
+    documentationUrl: './docs/Livrable projet Deliver.pdf',
+    demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
   {
     id: 3,
@@ -264,8 +264,8 @@ const projects = ref<Project[]>([
       "Application de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement",
     image: './images/logoOrganizeur.avif',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
-    documentationUrl: '/docs/Livrable Organizeur.pdf',
-    demoUrl: '/docs/DocTechniqueDeliver.pdf',
+    documentationUrl: './docs/Livrable Organizeur.pdf',
+    demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
 ])
 </script>

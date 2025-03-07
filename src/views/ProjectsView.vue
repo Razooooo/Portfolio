@@ -123,8 +123,8 @@ const projects = ref<Project[]>([
       'Système de notifications',
     ],
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
-    documentationUrl: 'public/docs/Livrable NurseCare.pdf',
-    demoUrl: 'public/docs/DocTechniqueNurseCare.docx.pdf',
+    documentationUrl: './docs/Livrable NurseCare.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
   },
   {
     id: 2,
@@ -141,8 +141,8 @@ const projects = ref<Project[]>([
       'Système de notation',
     ],
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
-    documentationUrl: 'public/docs/Livrable projet Deliver.pdf',
-    demoUrl: 'public/docs/DocTechniqueDeliver.pdf',
+    documentationUrl: './docs/Livrable projet Deliver.pdf',
+    demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
   {
     id: 3,
@@ -159,8 +159,8 @@ const projects = ref<Project[]>([
       'Synchronisation multi-appareils',
     ],
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
-    documentationUrl: 'public/docs/Livrable Organizeur.pdf',
-    demoUrl: 'public/docs/DocTechniqueOrganizeur.pdf',
+    documentationUrl: './docs/Livrable Organizeur.pdf',
+    demoUrl: './docs/DocTechniqueOrganizeur.pdf',
   },
 ])
 </script>
