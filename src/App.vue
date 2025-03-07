@@ -365,10 +365,12 @@ button {
     display: none;
   }
   
+  @media (max-width: 768px) {
   .desktop-nav {
     display: none; /* Masqué sur mobile */
   }
-  
+}
+
   .mobile-only {
     display: block;
   }

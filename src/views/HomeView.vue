@@ -270,7 +270,7 @@ const projects = ref<Project[]>([
 ])
 </script>
 
-<style scoped>
+  <style scoped>
 @import '@/assets/css/scrollReveal.css';
 
 .home {
@@ -279,10 +279,12 @@ const projects = ref<Project[]>([
   padding: 1rem;
   width: 100%;
   font-weight: 700; /* Applique une police grasse à tout le contenu */
+  box-sizing: border-box;
 }
 
 .presentation {
   margin-bottom: 3rem;
+  width: 100%;
 }
 
 .profile-container {
@@ -290,6 +292,7 @@ const projects = ref<Project[]>([
   gap: 2rem;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .profile-image {
@@ -422,12 +425,16 @@ const projects = ref<Project[]>([
   width: 150px;
 }
 
+/* Correction des sections compétences et projets */
 .skills {
-  margin-bottom: 5rem;
-  padding: 2rem;
+  margin: 0 auto 5rem auto;
+  padding: 2rem 1rem;
   background-color: transparent;
   border-radius: 12px;
   box-shadow: none;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 /* Nouveau style pour les conteneurs de catégories de compétences */
@@ -448,6 +455,8 @@ const projects = ref<Project[]>([
     box-shadow 0.3s ease;
   border-left: 4px solid #41b883;
   backdrop-filter: blur(5px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .skill-category-container:hover {
@@ -509,8 +518,13 @@ const projects = ref<Project[]>([
   font-weight: 700; /* Police grasse */
 }
 
+/* Correction des projets */
 .projects {
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem auto;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .projects-grid {
@@ -530,8 +544,10 @@ const projects = ref<Project[]>([
   transition: all 0.4s ease;
   height: auto;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
   max-width: 100%;
   backdrop-filter: blur(5px);
+  box-sizing: border-box;
 }
 
 .project-card:hover {
@@ -680,6 +696,21 @@ const projects = ref<Project[]>([
   color: #41b883;
 }
 
+/* Media queries améliorées */
+@media (min-width: 1025px) {
+  .projects-grid,
+  .skill-categories {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-grid,
+  .skill-categories {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 @media (max-width: 768px) {
   .profile-container {
     flex-direction: column;
@@ -706,18 +737,16 @@ const projects = ref<Project[]>([
   .skills-items-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .home,
+  
+  .skills,
   .projects {
+    padding: 1rem;
     width: 100%;
   }
-
-  .section {
-    margin-bottom: 3rem;
-  }
-
+  
+  .skill-categories,
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .project-links {
@@ -733,6 +762,11 @@ const projects = ref<Project[]>([
 }
 
 @media (max-width: 480px) {
+  .skills,
+  .projects {
+    padding: 0.5rem;
+  }
+  
   .skills-items-grid {
     grid-template-columns: 1fr;
   }
@@ -750,5 +784,15 @@ const projects = ref<Project[]>([
     width: 24px;
     height: 24px;
   }
+  
+  .project-links {
+    flex-direction: column;
+  }
+  
+  .doc-link,
+  .demo-link {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
-</style>
+  </style>

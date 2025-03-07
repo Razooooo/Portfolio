@@ -15,7 +15,7 @@
         <div v-if="isMenuOpen" class="menu-overlay" @click="closeMenu">
           <div class="menu-content" @click.stop>
             <div class="menu-header">
-              <div class="menu-logo">Portfolio</div>
+              <div class="logo">Portfolio</div>
               <button class="close-button" @click="closeMenu" aria-label="Fermer">
                 ✕
               </button>
@@ -60,23 +60,23 @@
   </script>
   
   <style scoped>
-  .mobile-menu {
-    display: none; /* Masqué par défaut, visible uniquement sur mobile */
-  }
+.mobile-menu {
+  display: none; /* Masqué par défaut */
+}
   
-  .hamburger-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: 0;
-    z-index: 1100;
-  }
+.hamburger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px; /* Éloigner du bord gauche */
+  z-index: 1100;
+}
   
   .hamburger-button span {
     width: 100%;
@@ -110,81 +110,72 @@
   }
   
   .menu-content {
-    background-color: #192734; /* Fond complètement opaque au lieu de rgba avec transparence */
-    height: 100%;
-    width: 85%;
-    max-width: 320px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  }
+  background-color: #192734; /* Fond complètement opaque au lieu de rgba avec transparence */
+  height: 100%;
+  width: 85%;
+  max-width: 320px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   
-  .menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #192734; /* Fond opaque */
-  }
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
   
-  .menu-logo {
-    color: white;
-    font-size: 1.8rem;
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
+.menu-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background-color: #192734; /* Fond opaque pour chaque élément du menu */
+}
+
+.menu-icon {
+  margin-right: 12px;
+  font-size: 1.3rem;
+}
+
+.menu-link:hover, .menu-link.router-link-active {
+  background-color: #2a5b47; /* Fond opaque au survol, plus foncé que la couleur principale */
+  color: #41b883;
+}
   
-  .close-button {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .close-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .menu-links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-  
-  .menu-link {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    font-size: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-    font-weight: 700;
-    background-color: #192734; /* Fond opaque pour chaque élément du menu */
-  }
-  
-  .menu-icon {
-    margin-right: 12px;
-    font-size: 1.3rem;
-  }
-  
-  .menu-link:hover, .menu-link.router-link-active {
-    background-color: #2a5b47; /* Fond opaque au survol */
+  .menu-link:hover {
     color: #41b883;
+    transform: translateX(5px);
   }
   
   /* Animation */
@@ -204,5 +195,3 @@
     }
   }
   </style>
-
-/* Media queries */
