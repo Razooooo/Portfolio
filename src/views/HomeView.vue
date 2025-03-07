@@ -18,22 +18,22 @@
           <h2 class="reveal-on-scroll reveal-right reveal-delay-2">Étudiant en BTS SIO</h2>
           <p class="bio reveal-on-scroll reveal-right reveal-delay-3">
             Passionné par le développement web et mobile, ainsi que par la cybersécurité et
-            l’intelligence artificielle, je mets mes compétences au service de la création
-            d’applications innovantes, sécurisées et performantes.
+            l'intelligence artificielle, je mets mes compétences au service de la création
+            d'applications innovantes, sécurisées et performantes.
           </p>
 
           <p class="bio reveal-on-scroll reveal-right reveal-delay-3">
-            Toujours en quête de perfectionnement, j’explore les dernières technologies pour
+            Toujours en quête de perfectionnement, j'explore les dernières technologies pour
             concevoir des solutions modernes adaptées aux besoins des utilisateurs. Après deux
-            années de formation en BTS Services Informatiques aux Organisations, j’aspire à
+            années de formation en BTS Services Informatiques aux Organisations, j'aspire à
             approfondir mes connaissances et à relever de nouveaux défis dans ces domaines en
             constante évolution.
           </p>
 
           <p class="bio reveal-on-scroll reveal-right reveal-delay-3">
             À travers cette page, je partage mes réalisations issues de mes études et de mes
-            expériences professionnelles. Mon objectif est d’échanger avec d’autres passionnés,
-            d’apprendre continuellement et de contribuer à des projets ambitieux dans le monde du
+            expériences professionnelles. Mon objectif est d'échanger avec d'autres passionnés,
+            d'apprendre continuellement et de contribuer à des projets ambitieux dans le monde du
             numérique.
           </p>
 
@@ -51,6 +51,9 @@
         </div>
       </div>
     </section>
+
+    <!-- Importation du composant Timeline -->
+    <Timeline />
 
     <!-- Section Compétences -->
     <section class="skills">
@@ -138,6 +141,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
+import Timeline from '@/components/TimeLine.vue'  // Import du composant Timeline
 
 // Initialisation de l'animation au défilement
 useScrollReveal()
@@ -270,7 +274,7 @@ const projects = ref<Project[]>([
 ])
 </script>
 
-  <style scoped>
+<style scoped>
 @import '@/assets/css/scrollReveal.css';
 
 .home {
@@ -795,4 +799,4 @@ const projects = ref<Project[]>([
     margin-bottom: 0.5rem;
   }
 }
-  </style>
+</style>
