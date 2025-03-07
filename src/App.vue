@@ -308,6 +308,10 @@ button {
   display: flex;
 }
 
+.desktop-nav {
+  display: flex; /* Visible par défaut sur desktop */
+}
+
 .mobile-only {
   display: none;
 }
@@ -359,6 +363,10 @@ button {
 @media (max-width: 768px) {
   .desktop-only {
     display: none;
+  }
+  
+  .desktop-nav {
+    display: none; /* Masqué sur mobile */
   }
   
   .mobile-only {
