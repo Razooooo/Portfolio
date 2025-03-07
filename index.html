@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Modification du viewport pour désactiver la détection de taille mobile -->
+    <meta name="viewport" content="width=1024, initial-scale=1.0" />
+    <title>Portfolio Nathan</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Script pour forcer le mode desktop peu importe la taille de l'écran -->
+    <script>
+      // Force le mode desktop
+      window.onload = function () {
+        document.body.classList.add('desktop-mode')
+
+        // Force la mise à jour des media queries
+        const style = document.createElement('style')
+        style.innerHTML = `
+          @media (min-width: 10px) {
+            .projects-grid, .skills-grid {
+              display: grid !important;
+              grid-template-columns: repeat(3, 1fr) !important;
+            }
+            .profile-container {
+              flex-direction: row !important;
+              text-align: left !important;
+            }
+            .project-links, .project-actions {
+              flex-direction: row !important;
+            }
+          }
+        `
+        document.head.appendChild(style)
+
+        console.log('Desktop mode forcé')
+      }
+    </script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-B809Lb0i.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DOQPwln3.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Force l'affichage en mode desktop
+        const metaViewport = document.querySelector('meta[name="viewport"]')
+        if (metaViewport) {
+          metaViewport.setAttribute('content', 'width=1024, initial-scale=1.0')
+        }
+
+        // Forcer une largeur minimale au corps de la page
+        document.body.style.minWidth = '1024px'
+      })
+    </script>
+  </body>
+</html>
