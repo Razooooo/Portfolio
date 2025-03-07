@@ -114,7 +114,7 @@ const projects = ref<Project[]>([
     date: '2025',
     description:
       "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
-    image: 'public/images/nursecare.png',
+    image: '/images/nursecare.png',
     features: [
       'Gestion des dossiers patients',
       'Planification des tournées',
@@ -132,7 +132,7 @@ const projects = ref<Project[]>([
     date: '2024',
     description:
       'Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
-    image: 'public/images/delivereasy.png',
+    image: '/images/delivereasy.png',
     features: [
       'Commande en ligne',
       'Suivi en temps réel',
@@ -150,7 +150,7 @@ const projects = ref<Project[]>([
     date: '2024',
     description:
       "Application de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement.",
-    image: 'public/images/logoOrganizeur.avif',
+    image: '/images/logoOrganizeur.avif',
     features: [
       "Création et gestion d'événements",
       'Calendrier interactif',
