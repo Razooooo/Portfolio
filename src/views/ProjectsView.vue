@@ -1,43 +1,75 @@
 <template>
   <div class="projects">
-    <div class="projects-header">
+    <div class="projects-header reveal-on-scroll reveal-bottom">
       <h1>Mes Projets</h1>
       <p class="subtitle">Découvrez mes réalisations en BTS SIO</p>
     </div>
 
-    <div class="projects-grid">
-      <article v-for="project in projects" :key="project.id" class="project-card">
+    <div
+      class="projects-grid"
+      style="
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+      "
+    >
+      <article
+        v-for="project in projects"
+        :key="project.id"
+        class="project-card reveal-on-scroll"
+        :class="project.id % 2 === 0 ? 'reveal-right' : 'reveal-left'"
+        :style="{
+          width: '100% !important',
+          maxWidth: 'none !important',
+        }"
+      >
         <div class="project-image">
           <img :src="project.image" :alt="project.title" />
         </div>
 
         <div class="project-content">
-          <header class="project-header">
+          <header class="project-header reveal-on-scroll reveal-bottom reveal-delay-1">
             <h2 class="project-title">{{ project.title }}</h2>
             <p class="project-date">{{ project.date }}</p>
           </header>
 
-          <p class="project-description">{{ project.description }}</p>
+          <p class="project-description reveal-on-scroll reveal-bottom reveal-delay-2">
+            {{ project.description }}
+          </p>
 
-          <div class="project-details">
+          <div class="project-details reveal-on-scroll reveal-bottom reveal-delay-3">
             <h3>Fonctionnalités principales :</h3>
             <ul class="features-list">
-              <li v-for="feature in project.features" :key="feature">
+              <li
+                v-for="(feature, index) in project.features"
+                :key="feature"
+                class="reveal-on-scroll reveal-left"
+                :class="`reveal-delay-${(index % 5) + 1}`"
+              >
                 {{ feature }}
               </li>
             </ul>
           </div>
 
-          <div class="tech-stack">
-            <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
+          <div class="tech-stack reveal-on-scroll reveal-bottom reveal-delay-4">
+            <span
+              v-for="(tech, index) in project.technologies"
+              :key="tech"
+              class="tech-tag reveal-on-scroll reveal-scale"
+              :class="`reveal-delay-${(index % 5) + 1}`"
+            >
               {{ tech }}
             </span>
           </div>
 
-          <footer class="project-actions">
-            <a :href="project.documentationUrl" download class="btn btn-primary">
+          <footer
+            class="project-actions reveal-on-scroll reveal-bottom reveal-delay-5"
+            style="display: flex !important; flex-direction: row !important"
+          >
+            <a :href="project.documentationUrl" target="_blank" class="btn btn-primary">
               <span class="icon">📄</span>
-              Documentation
+              Doc
             </a>
 
             <a
@@ -58,6 +90,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useScrollReveal } from '@/composables/useScrollReveal'
+
+// Initialisation de l'animation au défilement
+useScrollReveal()
 
 interface Project {
   id: number
@@ -87,15 +123,15 @@ const projects = ref<Project[]>([
       'Système de notifications',
     ],
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
-    documentationUrl: '/docs/documentation-nursecare.pdf',
-    demoUrl: 'https://nursecare-demo.com',
+    documentationUrl: 'public/docs/Livrable NurseCare.pdf',
+    demoUrl: 'public/docs/DocTechniqueNurseCare.docx.pdf',
   },
   {
     id: 2,
     title: 'DeliverEasy',
     date: '2024',
     description:
-      'Plateforme de livraison de repas optimisant les trajets des livreurs et la gestion des commandes.',
+      'Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
     image: '/images/delivereasy.png',
     features: [
       'Commande en ligne',
@@ -104,43 +140,92 @@ const projects = ref<Project[]>([
       'Gestion des restaurants',
       'Système de notation',
     ],
-    technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Socket.io'],
-    documentationUrl: '/docs/documentation-delivereasy.pdf',
-    demoUrl: 'https://delivereasy-demo.com',
+    technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
+    documentationUrl: 'public/docs/Livrable projet Deliver.pdf',
+    demoUrl: 'public/docs/DocTechniqueDeliver.pdf',
+  },
+  {
+    id: 3,
+    title: "Organi'zeur",
+    date: '2024',
+    description:
+      "Application de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement.",
+    image: '/images/logoOrganizeur.avif',
+    features: [
+      "Création et gestion d'événements",
+      'Calendrier interactif',
+      'Rappels et notifications',
+      "Partage d'événements",
+      'Synchronisation multi-appareils',
+    ],
+    technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
+    documentationUrl: 'public/docs/Livrable Organizeur.pdf',
+    demoUrl: 'public/docs/DocTechniqueOrganizeur.pdf',
   },
 ])
 </script>
 
 <style scoped>
+@import '@/assets/css/scrollReveal.css';
+
 .projects {
-  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+.projects-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.projects-header h1 {
+  font-size: 1.8rem;
+  color: rgb(0, 0, 0);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  color: #000000;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  width: 100%;
   margin-top: 1rem;
 }
 
-.projects-header {
-  margin-bottom: 2rem;
-}
-
 .project-card {
-  background: white;
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  height: 100%;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #41b883;
 }
 
 .project-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
+  height: 180px;
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .project-image img {
@@ -150,10 +235,15 @@ const projects = ref<Project[]>([
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
 .project-content {
-  padding: 1.25rem;
+  padding: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -162,16 +252,39 @@ const projects = ref<Project[]>([
 .project-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #1a2634;
+  color: white;
+  transition: color 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover .project-title {
+  color: #41b883;
 }
 
 .project-description {
   margin-bottom: 0.75rem;
-  color: #4a4a4a;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .project-details {
   margin: 0.75rem 0;
+}
+
+.project-details h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.features-list {
+  padding-left: 1.5rem;
+}
+
+.features-list li {
+  color: white;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .tech-stack {
@@ -182,26 +295,40 @@ const projects = ref<Project[]>([
 }
 
 .tech-tag {
-  background-color: #e9ecef;
-  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  font-size: 0.875rem;
-  color: #2d3436;
+  font-size: 0.8rem;
+  color: white;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover .tech-tag {
+  background-color: rgba(65, 184, 131, 0.3);
 }
 
 .project-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-top: auto;
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
   flex: 1;
   text-align: center;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  min-width: 100px;
 }
 
 .btn-primary {
@@ -209,35 +336,47 @@ const projects = ref<Project[]>([
   color: white;
 }
 
+.btn-primary:hover {
+  background-color: #0069d9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
 .btn-secondary {
-  background-color: #6c757d;
+  background-color: transparent;
   color: white;
+  border: 1px solid white;
 }
 
-.projects-header h1 {
-  color: #1a2634;
-}
-
-.subtitle {
-  color: #4a4a4a;
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #41b883;
+  border-color: #41b883;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
 }
 
 .project-date {
-  color: #2d3436;
-}
-
-.project-details h3 {
-  color: #1a2634;
+  color: #f0f0f0;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.features-list li {
-  color: #4a4a4a;
-}
-
+/* Media queries */
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 </style>
