@@ -168,31 +168,31 @@ const skillCategories = ref<SkillCategory[]>([
     skills: [
       {
         name: 'HTML5',
-        icon: '/images/html5.png',
+        icon: './images/html5.png',
       },
       {
         name: 'CSS3',
-        icon: '/images/css3.png',
+        icon: './images/css3.png',
       },
       {
         name: 'TypeScript',
-        icon: '/images/ts.png',
+        icon: './images/ts.png',
       },
       {
         name: 'JavaScript',
-        icon: '/images/js.png',
+        icon: './images/js.png',
       },
       {
         name: 'Kotlin',
-        icon: '/images/kotlin.png',
+        icon: './images/kotlin.png',
       },
       {
         name: 'Vue.js',
-        icon: 'public/images/vue.png',
+        icon: './images/vue.png',
       },
       {
         name: 'React',
-        icon: '/images/react.png',
+        icon: './images/react.png',
       },
     ],
   },
@@ -201,15 +201,15 @@ const skillCategories = ref<SkillCategory[]>([
     skills: [
       {
         name: 'Node.js',
-        icon: '/images/nodejs.png',
+        icon: './images/nodejs.png',
       },
       {
         name: 'PHP',
-        icon: '/images/php.png',
+        icon: './images/php.png',
       },
       {
         name: 'SQL / MySQL',
-        icon: '/images/mysql-logo.svg',
+        icon: './images/mysql-logo.svg',
       },
     ],
   },
@@ -218,19 +218,19 @@ const skillCategories = ref<SkillCategory[]>([
     skills: [
       {
         name: 'Git / GitHub',
-        icon: '/images/github.png',
+        icon: './images/github.png',
       },
       {
         name: 'VS Code',
-        icon: '/images/vscode.png',
+        icon: './images/vscode.png',
       },
       {
         name: 'Linux',
-        icon: '/images/linux.png',
+        icon: './images/linux.png',
       },
       {
         name: 'IntelliJ Idea',
-        icon: '/images/IntelliJ_IDEA_logo_01.png',
+        icon: './images/IntelliJ_IDEA_logo_01.png',
       },
     ],
   },
@@ -242,7 +242,7 @@ const projects = ref<Project[]>([
     title: 'NurseCare',
     description:
       "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
-    image: '/images/nursecare.png',
+    image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
     documentationUrl: '/docs/Livrable NurseCare.pdf',
     demoUrl: '/docs/DocTechniqueNurseCare.docx.pdf',
@@ -252,7 +252,7 @@ const projects = ref<Project[]>([
     title: 'DeliverEasy',
     description:
       'Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
-    image: '/images/delivereasy.png',
+    image: './images/delivereasy.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
     documentationUrl: '/docs/Livrable projet Deliver.pdf',
     demoUrl: '/docs/DocTechniqueDeliver.pdf',
@@ -262,7 +262,7 @@ const projects = ref<Project[]>([
     title: "Organi'zeur",
     description:
       "Application de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement",
-    image: '/images/logoOrganizeur.avif',
+    image: './images/logoOrganizeur.avif',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
     documentationUrl: '/docs/Livrable Organizeur.pdf',
     demoUrl: '/docs/DocTechniqueDeliver.pdf',
