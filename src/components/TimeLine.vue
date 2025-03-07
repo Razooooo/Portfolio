@@ -134,6 +134,7 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
+    z-index: 0; /* Assure que la ligne est derrière les points */
   }
   
   .timeline-item {
@@ -151,7 +152,7 @@
     border-radius: 50%;
     top: 30px;
     transition: all 0.3s ease;
-    z-index: 1;
+    z-index: 2; /* Assure que les points sont au-dessus de la ligne */
   }
   
   /* Styles pour les points des stages */
@@ -293,22 +294,28 @@
   
   /* Responsive design pour la frise chronologique */
   @media screen and (max-width: 768px) {
+    /* En mode mobile, on repositionne la ligne */
     .timeline-line {
       left: 20px;
+      transform: none;
     }
     
     .timeline-item {
       width: 100%;
       padding-left: 50px;
       padding-right: 10px;
+      margin-bottom: 40px;
     }
     
     .left, .right {
       left: 0;
     }
     
-    .timeline-point {
-      left: 11px;
+    /* IMPORTANT: Positionnement précis des points sur la ligne en mobile */
+    .left .timeline-point,
+    .right .timeline-point {
+      left: 10px; /* Moitié de la largeur du point */
+      right: auto;
     }
     
     .timeline-content {
