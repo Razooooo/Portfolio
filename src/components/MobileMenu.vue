@@ -204,3 +204,5 @@
     }
   }
   </style>
+
+/* Media queries */
