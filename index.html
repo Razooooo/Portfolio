@@ -1,9 +1,8 @@
-<!-- Remplacez votre balise meta viewport dans index.html -->
 <!doctype html>
 <html lang="">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
     <!-- Modification du viewport pour désactiver la détection de taille mobile -->
     <meta name="viewport" content="width=1024, initial-scale=1.0" />
     <title>Portfolio Nathan</title>
@@ -42,19 +41,19 @@
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="src/main.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Force l'affichage en mode desktop
+        const metaViewport = document.querySelector('meta[name="viewport"]')
+        if (metaViewport) {
+          metaViewport.setAttribute('content', 'width=1024, initial-scale=1.0')
+        }
+
+        // Forcer une largeur minimale au corps de la page
+        document.body.style.minWidth = '1024px'
+      })
+    </script>
   </body>
 </html>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Force l'affichage en mode desktop
-    const metaViewport = document.querySelector('meta[name="viewport"]')
-    if (metaViewport) {
-      metaViewport.setAttribute('content', 'width=1024, initial-scale=1.0')
-    }
-
-    // Forcer une largeur minimale au corps de la page
-    document.body.style.minWidth = '1024px'
-  })
-</script>

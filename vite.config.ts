@@ -1,15 +1,29 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+// Si vous utilisez le plugin vue-devtools, importez-le aussi
+import VueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/Portfolio/', // Remplace "nom-du-repo" par le nom exact de ton repo GitHub
-  plugins: [vue(), vueDevTools()],
+  base: process.env.NODE_ENV === 'production' ? '/Portfolio/' : '/',
+  plugins: [
+    vue(),
+    VueDevTools() // Si vous l'utilisez
+  ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
   },
+  build: {
+    // Améliorer la gestion des assets
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
+    }
+  }
 })
