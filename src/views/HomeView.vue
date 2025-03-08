@@ -2,6 +2,7 @@
   <div class="home">
     <!-- Section Présentation -->
     <section class="presentation">
+      <h2 class="section-title reveal-on-scroll reveal-bottom">À Propos de Moi</h2>
       <div
         class="profile-container reveal-on-scroll reveal-bottom"
         style="
@@ -32,9 +33,7 @@
 
           <p class="bio reveal-on-scroll reveal-right reveal-delay-3">
             À travers cette page, je partage mes réalisations issues de mes études et de mes
-            expériences professionnelles. Mon objectif est d'échanger avec d'autres passionnés,
-            d'apprendre continuellement et de contribuer à des projets ambitieux dans le monde du
-            numérique.
+            expériences professionnelles.
           </p>
 
           <div
@@ -65,7 +64,8 @@
           v-for="(category, index) in skillCategories"
           :key="category.title"
           class="skill-category-container reveal-on-scroll reveal-bottom"
-          :class="`reveal-delay-${(index % 5) + 1}`"
+          :class="`reveal-delay-${(index % 5) + 1}
+</style>`"
         >
           <h3>{{ category.title }}</h3>
 
@@ -135,11 +135,91 @@
         </article>
       </div>
     </section>
+
+    <!-- Section Épreuve E5 -->
+    <section class="e5-section">
+      <h2 class="section-title reveal-on-scroll reveal-bottom">Épreuve E5</h2>
+      
+      <div class="e5-container">
+        <div class="e5-text reveal-on-scroll reveal-left">
+          <h3>Présentation de l'Épreuve E5</h3>
+          <p>
+            L'épreuve E5 du BTS SIO est une épreuve professionnelle qui évalue les compétences
+            acquises en situation réelle. Elle consiste à présenter des projets développés durant
+            la formation qui démontrent mes capacités à concevoir et réaliser des applications web et mobile
+          </p>
+          <p>
+            Ces projets illustrent ma maîtrise des technologies, des méthodes de développement
+            et ma capacité à répondre aux besoins des utilisateurs. Et pour cela j'ai choisi NurseCare et ... 
+          </p>
+        </div>
+        
+        <div class="e5-carousel reveal-on-scroll reveal-right">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div v-for="project in e5Projects" :key="project.id" class="carousel-card">
+                <div class="carousel-header">
+                  <div class="image-container">
+                    <img :src="project.image" :alt="project.title" class="carousel-logo" />
+                  </div>
+                  <h4>{{ project.title }}</h4>
+                </div>
+                <div class="carousel-desc">
+                  <p>{{ project.description }}</p>
+                </div>
+                <div class="carousel-tech">
+                  <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
+                    {{ tech }}
+                  </span>
+                </div>
+                <div class="carousel-footer">
+                  <a :href="project.documentationUrl" target="_blank" class="e5-doc-link">
+                    <span class="icon">📄</span> Documentation
+                  </a>
+                  <a v-if="project.demoUrl" :href="project.demoUrl" target="_blank" class="e5-doc-link">
+                    <span class="icon">🔗</span> Demo
+                  </a>
+                  <div class="nav-buttons">
+                    <button @click.stop="prevSlide" class="nav-btn prev-btn">
+                      <span class="arrow">&#10094;</span>
+                    </button>
+                    <button @click.stop="nextSlide" class="nav-btn next-btn">
+                      <span class="arrow">&#10095;</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Épreuve E4 - À ajouter après la section Épreuve E5 -->
+<section class="e4-section">
+  <h2 class="section-title reveal-on-scroll reveal-bottom">Épreuve E4</h2>
+  
+  <div class="e4-container">
+    <div class="e4-content reveal-on-scroll reveal-bottom">
+      <h3>Présentation de l'Épreuve E4</h3>
+      <p>
+        Cette épreuve met en avant mon parcours de professionnalisation et la mise en pratique 
+        des connaissances acquises durant ma formation.
+      </p>
+      
+      <div class="e4-buttons">
+        <a href="./docs/Tableau-Synthese-E4.xlsx" target="_blank" class="e4-button excel-button">
+          <span class="button-icon">📊</span>
+          <span class="button-text">Tableau de Synthèse E4</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 import Timeline from '@/components/TimeLine.vue'  // Import du composant Timeline
 
@@ -212,7 +292,7 @@ const skillCategories = ref<SkillCategory[]>([
         icon: './images/php.png',
       },
       {
-        name: 'SQL / MySQL',
+        name: 'MySQL',
         icon: './images/mysql-logo.svg',
       },
     ],
@@ -247,7 +327,7 @@ const projects = ref<Project[]>([
     description:
       "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
     image: './images/nursecare.png',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable NurseCare.pdf',
     demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
   },
@@ -257,7 +337,7 @@ const projects = ref<Project[]>([
     description:
       'Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
     image: './images/delivereasy.png',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable projet Deliver.pdf',
     demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
@@ -267,11 +347,76 @@ const projects = ref<Project[]>([
     description:
       "Application de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement",
     image: './images/logoOrganizeur.avif',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'Node.js'],
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable Organizeur.pdf',
     demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
 ])
+
+// Projets pour l'épreuve E5
+const e5Projects = ref<Project[]>([
+  {
+    id: 101,
+    title: "Projet E5 - NurseCare",
+    description: "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées",
+    image: './images/nursecare.png',
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
+    documentationUrl: './docs/Livrable NurseCare.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
+  },
+  {
+    id: 102,
+    title: "Projet E5 - DeliverEasy",
+    description: "Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.",
+    image: './images/delivereasy.png',
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
+    documentationUrl: './docs/Documentation_DeliverEasy.pdf',
+    demoUrl: './docs/DocTechniqueDeliver.pdf',
+  }
+])
+
+// Variables et fonctions pour le carrousel
+const currentSlide = ref(0)
+const slidesCount = computed(() => e5Projects.value.length)
+
+function nextSlide() {
+  currentSlide.value = (currentSlide.value + 1) % slidesCount.value
+  updateCarousel()
+}
+
+function prevSlide() {
+  currentSlide.value = (currentSlide.value - 1 + slidesCount.value) % slidesCount.value
+  updateCarousel()
+}
+
+function updateCarousel() {
+  const track = document.querySelector('.carousel-track') as HTMLElement
+  if (track) {
+    const slideWidth = document.querySelector('.carousel-card')?.clientWidth || 0
+    track.style.transform = `translateX(-${currentSlide.value * slideWidth}px)`
+  }
+}
+
+// Initialiser le carrousel après le montage du composant
+onMounted(() => {
+  updateCarousel()
+  
+  // Auto-rotation du carrousel toutes les 5 secondes
+  const autoplayInterval = setInterval(() => {
+    nextSlide()
+  }, 5000)
+  
+  // Nettoyer l'intervalle lors de la destruction du composant
+  onUnmounted(() => {
+    clearInterval(autoplayInterval)
+  })
+  
+  // Recalculer les positions lors du redimensionnement de la fenêtre
+  window.addEventListener('resize', updateCarousel)
+  onUnmounted(() => {
+    window.removeEventListener('resize', updateCarousel)
+  })
+})
 </script>
 
 <style scoped>
@@ -700,6 +845,334 @@ const projects = ref<Project[]>([
   color: #41b883;
 }
 
+/* Styles pour la section Épreuve E5 */
+.e5-section {
+  margin: 0 auto 5rem auto;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.e5-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: stretch; /* Change pour aligner verticalement */
+}
+
+.e5-text,
+.e5-carousel {
+  flex: 1 1 calc(50% - 1rem); /* Chaque élément prend exactement la moitié de l'espace moins la moitié du gap */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.e5-text {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border-left: 4px solid #41b883;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.e5-text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.e5-text h3 {
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+}
+
+.e5-text p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.e5-carousel {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* DÉBUT DES CORRECTIONS POUR LE CAROUSEL */
+/* Ajustement du conteneur du carrousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(68, 163, 211, 0.7), rgba(20, 40, 60, 0.9));
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Assurer que le carrousel ne déborde pas */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-out;
+  width: 100%;
+  flex: 1;
+}
+
+.carousel-card {
+  min-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-header {
+  padding: 1.5rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Conteneur d'image à taille fixe */
+.image-container {
+  width: 100%;
+  height: 200px; /* Hauteur fixe pour tous les conteneurs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden; /* Empêche les images de déborder */
+}
+
+.carousel-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* L'image s'adapte au conteneur sans déformation */
+}
+
+.carousel-header h4 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-weight: 800;
+}
+
+/* Améliorer l'utilisation de l'espace dans les sections du carrousel */
+.carousel-desc {
+  padding: 1rem 1rem 0.5rem 1rem; /* Réduire le padding vertical */
+  flex-grow: 1;
+}
+
+.carousel-desc p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+.carousel-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.carousel-tech .tech-tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* CORRECTION DU FOOTER DU CAROUSEL */
+.carousel-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-bottom: 0; /* Assurer qu'il n'y a pas de marge en bas */
+  position: relative; /* Pour assurer un positionnement correct */
+  width: 100%;
+  box-sizing: border-box; /* Garantir que le padding est inclus dans la largeur */
+}
+
+.e5-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #00574B;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.e5-doc-link:hover {
+  background-color: #00574B;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Améliorer la navigation sur écrans tactiles */
+.nav-btn {
+  min-width: 36px; /* Assurer une taille minimale pour le tactile */
+  min-height: 36px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(0, 87, 75, 0.7);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #00574B;
+  transform: scale(1.1);
+}
+
+.nav-btn .arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/* FIN DES CORRECTIONS POUR LE CAROUSEL */
+
+/* Styles modifiés pour la section Épreuve E4 avec un seul bouton centré */
+.e4-section {
+  margin: 0 auto 5rem auto;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.e4-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.e4-content {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border-left: 4px solid #41b883;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 800px;
+}
+
+.e4-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.e4-content h3 {
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+}
+
+.e4-content p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.e4-buttons {
+  display: flex;
+  justify-content: center; /* Centre le bouton horizontalement */
+  margin-top: 2rem;
+}
+
+.e4-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.excel-button {
+  background-color: #1F7244;
+  color: white;
+  border: 2px solid #1F7244;
+}
+
+.excel-button:hover {
+  background-color: #2A9157;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(42, 145, 87, 0.3);
+}
+
+.pdf-button {
+  background-color: #D14836;
+  color: white;
+  border: 2px solid #D14836;
+}
+
+.pdf-button:hover {
+  background-color: #E45A48;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(228, 90, 72, 0.3);
+}
+
+.button-icon {
+  font-size: 1.3rem;
+}
+
 /* Media queries améliorées */
 @media (min-width: 1025px) {
   .projects-grid,
@@ -743,7 +1216,8 @@ const projects = ref<Project[]>([
   }
   
   .skills,
-  .projects {
+  .projects,
+  .e5-section {
     padding: 1rem;
     width: 100%;
   }
@@ -763,11 +1237,49 @@ const projects = ref<Project[]>([
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
   }
+  
+  .e5-container {
+    flex-direction: column;
+  }
+  
+  .e5-text, .e5-carousel {
+    width: 100%;
+  }
+  
+  .carousel-header h4 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-desc p {
+    font-size: 1rem;
+  }
+  
+  .e5-doc-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .e4-content {
+    padding: 1.5rem;
+  }
+  
+  .e4-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .e4-button {
+    width: auto; /* Au lieu de 100% pour permettre un centrage naturel */
+    min-width: 200px; /* Donne une largeur minimale pour la lisibilité */
+    justify-content: center;
+  }
 }
 
+/* CORRECTIONS POUR LE CAROUSEL SUR MOBILE */
 @media (max-width: 480px) {
   .skills,
-  .projects {
+  .projects,
+  .e5-section {
     padding: 0.5rem;
   }
   
@@ -797,6 +1309,143 @@ const projects = ref<Project[]>([
   .demo-link {
     width: 100%;
     margin-bottom: 0.5rem;
+  }
+  
+  .carousel-header {
+    padding: 0.75rem; /* Réduction du padding */
+  }
+  
+  .image-container {
+    height: 120px; /* Hauteur réduite pour mobile */
+    margin-bottom: 0.5rem; /* Marge réduite */
+  }
+  
+  .carousel-header h4 {
+    font-size: 1.1rem; /* Texte plus petit sur mobile */
+    margin: 0.25rem 0; /* Marges réduites */
+  }
+  
+  .carousel-desc, .carousel-tech {
+    padding: 0.75rem; /* Réduction du padding */
+  }
+  
+  .carousel-desc p {
+    font-size: 0.9rem; /* Texte plus petit */
+    line-height: 1.4; /* Interligne réduit */
+  }
+  
+  .carousel-tech .tech-tag {
+    padding: 0.25rem 0.5rem; /* Tags plus petits */
+    font-size: 0.8rem;
+  }
+  
+  /* CORRECTION DU FOOTER DU CAROUSEL SUR MOBILE */
+  .carousel-footer {
+    padding: 0.75rem;
+    flex-wrap: wrap; /* Permettre le retour à la ligne */
+    gap: 0.5rem;
+    flex-direction: row; /* Maintenir horizontal quand possible */
+    justify-content: space-between;
+    position: relative; /* Important pour le positionnement mobile */
+    bottom: 0; /* Ancrer au bas du conteneur */
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0; /* Supprimer la marge supérieure */
+    justify-content: center;
+    width: auto;
+  }
+  
+  .e5-doc-link {
+    flex: 0 1 auto; /* Ne pas prendre tout l'espace disponible */
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .nav-buttons {
+    margin-top: 0; /* Espacement si les boutons passent à la ligne */
+    width: auto; /* Prendre toute la largeur si nécessaire */
+    justify-content: center; /* Centrer les boutons de navigation */
+  }
+  
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .e4-content {
+    padding: 1rem;
+  }
+  
+  .e4-content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .e4-content p {
+    font-size: 1rem;
+  }
+  
+  .e4-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+}
+
+/* Ajustements pour les téléphones très petits */
+@media (max-width: 360px) {
+  .image-container {
+    height: 100px; /* Encore plus petit sur très petits écrans */
+  }
+  
+  /* CORRECTION SPÉCIALE POUR LES TRÈS PETITS ÉCRANS */
+  .carousel-footer {
+    flex-direction: column; /* Empiler les éléments */
+    padding-bottom: 0.75rem; /* Assurer un padding en bas */
+  }
+  
+  .e5-doc-link {
+    width: 100%; /* Largeur complète */
+    margin-bottom: 0.4rem;
+  }
+  
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.4rem;
+  }
+  
+  .carousel-header h4 {
+    font-size: 1rem; /* Taille de police encore plus petite */
+  }
+  
+  .carousel-desc p {
+    font-size: 0.85rem; /* Texte encore plus petit */
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem; /* Tags encore plus petits */
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem; /* Titre de section plus petit */
+    margin-bottom: 1.5rem;
+  }
+  
+  .e4-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-width: 160px;
   }
 }
 </style>
