@@ -1,8 +1,8 @@
 <template>
   <div class="projects">
-    <div class="projects-header reveal-on-scroll reveal-bottom">
-      <h1>Mes Projets</h1>
-      <p class="subtitle">Découvrez mes réalisations en BTS SIO</p>
+    <div class="projects-header">
+      <h2 class="section-title reveal-on-scroll reveal-bottom">Mes Projets</h2>
+      <p class="subtitle reveal-on-scroll reveal-bottom reveal-delay-1">Découvrez mes réalisations en BTS SIO</p>
     </div>
 
     <div
@@ -173,23 +173,44 @@ const projects = ref<Project[]>([
   margin: 0 auto;
   padding: 1rem;
   width: 100%;
+  font-weight: 700;
+  box-sizing: border-box;
 }
 
 .projects-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
-.projects-header h1 {
-  font-size: 1.8rem;
-  color: rgb(0, 0, 0);
+.section-title {
+  font-size: 2.2rem;
+  color: white;
+  text-align: center;
   margin-bottom: 0.5rem;
+  position: relative;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #41b883;
+  margin: 0.5rem auto 0;
+  transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+  width: 150px;
 }
 
 .subtitle {
-  color: #000000;
+  color: white;
+  font-size: 1.2rem;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
 }
 
 .projects-grid {
@@ -197,27 +218,24 @@ const projects = ref<Project[]>([
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  margin-top: 1rem;
 }
 
 .project-card {
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   height: 100%;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: all 0.4s ease;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   border-color: #41b883;
 }
 
@@ -228,43 +246,66 @@ const projects = ref<Project[]>([
   overflow: hidden;
 }
 
+.project-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image::after {
+  opacity: 1;
+}
+
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s ease;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .project-content {
-  padding: 1rem;
+  padding: 1.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .project-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
   color: white;
+  margin-bottom: 0.5rem;
   transition: color 0.3s ease;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 800;
 }
 
 .project-card:hover .project-title {
   color: #41b883;
 }
 
+.project-date {
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+
 .project-description {
   margin-bottom: 0.75rem;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
 }
 
 .project-details {
@@ -275,6 +316,7 @@ const projects = ref<Project[]>([
   color: white;
   margin-bottom: 0.5rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
 }
 
 .features-list {
@@ -285,6 +327,7 @@ const projects = ref<Project[]>([
   color: white;
   margin-bottom: 0.25rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
 }
 
 .tech-stack {
@@ -302,6 +345,7 @@ const projects = ref<Project[]>([
   color: white;
   transition: all 0.3s ease;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
 }
 
 .project-card:hover .tech-tag {
@@ -315,10 +359,10 @@ const projects = ref<Project[]>([
 }
 
 .btn {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   flex: 1;
   text-align: center;
   transition: all 0.3s ease;
@@ -329,17 +373,48 @@ const projects = ref<Project[]>([
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   white-space: nowrap;
   min-width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(30, 30);
+    opacity: 0;
+  }
+}
+
+.btn:active::after {
+  animation: ripple 1s ease-out;
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #2c3e50;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #0069d9;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  background-color: #41b883;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(65, 184, 131, 0.3);
 }
 
 .btn-secondary {
@@ -352,19 +427,20 @@ const projects = ref<Project[]>([
   background-color: rgba(255, 255, 255, 0.1);
   color: #41b883;
   border-color: #41b883;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
-}
-
-.project-date {
-  color: #f0f0f0;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Media queries */
 @media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
   .projects-grid {
     grid-template-columns: 1fr !important;
   }
@@ -376,7 +452,25 @@ const projects = ref<Project[]>([
 
   .btn {
     font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .project-content {
+    padding: 1rem;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
+  }
+  
+  .project-details h3 {
+    font-size: 1.1rem;
   }
 }
 </style>

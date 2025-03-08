@@ -29,6 +29,10 @@
                 <span class="menu-icon">📂</span>
                 Projets
               </RouterLink>
+              <RouterLink to="/veille" class="menu-link" @click="closeMenu">
+                <span class="menu-icon">🔍</span>
+                Veille
+              </RouterLink>
             </div>
           </div>
         </div>
