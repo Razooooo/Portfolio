@@ -46,19 +46,6 @@
             </div>
           </div>
         </section>
-        
-        <!-- Section outils de veille -->
-        <section class="veille-tools reveal-on-scroll reveal-bottom">
-          <h3 class="subsection-title reveal-on-scroll reveal-bottom">Mes outils de veille</h3>
-          <p class="reveal-on-scroll reveal-bottom reveal-delay-1">
-            Pour organiser et optimiser ma veille technologique, j'utilise les outils suivants :
-          </p>
-          <ul class="tools-list">
-            <li v-for="(tool, index) in tools" :key="index" class="reveal-on-scroll reveal-left" :class="`reveal-delay-${index + 1}`">
-              <strong>{{ tool.name }} :</strong> {{ tool.description }}
-            </li>
-          </ul>
-        </section>
       </div>
     </div>
   </template>
@@ -79,17 +66,12 @@
     tags: string[]
   }
   
-  interface Tool {
-    name: string
-    description: string
-  }
-  
   // Liste des ressources de veille
   const resources = ref<Resource[]>([
     {
       id: 1,
       name: "Github Explore",
-      description: "GitHub Explore propose des projets populaires et des tendances dans le domaine du développement. C'est une excellente manière de suivre les technologies émergentes et les nouveaux outils.",
+      description: "GitHub Explore permet de découvrir des projets open source, des nouvelles technos et les tendances du moment. C’est parfait pour rester à jour, s’inspirer et même contribuer à des projets sympas. Un must pour tout développeur curieux !",
       image: "./images/explore.png",
       url: "https://github.com/explore/",
       tags: ["Web", "Programmation", "Tutorials"]
@@ -133,30 +115,6 @@
       image: "./images/anssi.png",
       url: "https://www.ssi.gouv.fr/",
       tags: ["Cybersécurité", "Veille", "France"]
-    }
-  ])
-  
-  // Liste des outils utilisés pour la veille
-  const tools = ref<Tool[]>([
-    {
-      name: "Feedly",
-      description: "Agrégateur de flux RSS pour suivre mes blogs et sites préférés en un seul endroit."
-    },
-    {
-      name: "Pocket",
-      description: "Service qui me permet de sauvegarder des articles pour les lire plus tard, même hors ligne."
-    },
-    {
-      name: "Twitter/X",
-      description: "Pour suivre des experts du domaine et les dernières actualités en temps réel."
-    },
-    {
-      name: "GitHub Trends",
-      description: "Pour découvrir les projets open source populaires et les nouvelles technologies."
-    },
-    {
-      name: "Google Alerts",
-      description: "Pour recevoir des notifications sur des sujets spécifiques qui m'intéressent."
     }
   ])
   </script>
