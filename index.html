@@ -1,16 +1,6 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <script>
-      // Vérifier s'il y a une redirection à traiter
-      const redirect = sessionStorage.getItem('redirect');
-      if (redirect) {
-        // Effacer la redirection du sessionStorage
-        sessionStorage.removeItem('redirect');
-        // Pousser le chemin dans l'historique sans recharger la page
-        history.pushState(null, null, redirect);
-      }
-    </script>
     <meta charset="UTF-8" />
     <link rel="icon" href="./images/logoP.jpg" sizes="128x128" />
     <!-- Rétablir un viewport responsive standard -->
@@ -21,8 +11,8 @@
       rel="stylesheet"
     />
     <!-- Supprimer le script qui force le mode desktop -->
-    <script type="module" crossorigin src="/Portfolio/assets/index-C02VY8Fk.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-8ko8XgYv.css">
+    <script type="module" crossorigin src="/Portfolio/assets/index-Fuuypcvn.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-8LKihPJi.css">
   </head>
   <body>
     <div id="app"></div>
