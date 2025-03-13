@@ -43,7 +43,7 @@
             <a href="https://github.com/Razooooo" target="_blank" class="social-link">
               <span class="icon">📦</span> GitHub
             </a>
-            <a href="https://linkedin.com/in/votre-profile" target="_blank" class="social-link">
+            <a href="https://linkedin.com/in/nathan-razafindrakoto" target="_blank" class="social-link">
               <span class="icon">💼</span> LinkedIn
             </a>
           </div>
@@ -207,7 +207,7 @@
       </p>
       
       <div class="e4-buttons">
-        <a href="./docs/Tableau-Synthese-E4.xlsx" target="_blank" class="e4-button excel-button">
+        <a href="./docs/E4- Tableau de synthèse Nathan.pdf" target="_blank" class="e4-button excel-button">
           <span class="button-icon">📊</span>
           <span class="button-text">Tableau de Synthèse E4</span>
         </a>
@@ -274,10 +274,6 @@ const skillCategories = ref<SkillCategory[]>([
         name: 'Vue.js',
         icon: './images/vue.png',
       },
-      {
-        name: 'React',
-        icon: './images/react.png',
-      },
     ],
   },
   {
@@ -316,6 +312,14 @@ const skillCategories = ref<SkillCategory[]>([
         name: 'IntelliJ Idea',
         icon: './images/IntelliJ_IDEA_logo_01.png',
       },
+      {
+        name: 'Postman',
+        icon: './images/postman.png',
+      },
+      {
+        name: 'Docker',
+        icon: './images/docker',
+      },
     ],
   },
 ])
@@ -350,6 +354,16 @@ const projects = ref<Project[]>([
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable Organizeur.pdf',
     demoUrl: './docs/DocTechniqueDeliver.pdf',
+  },
+  {
+    id: 4,
+    title: "GLPI",
+    description:
+      "Application de gestion des services informatiques permettant aux utilisateurs de suivre les incidents",
+    image: './images/glpi.png',
+    technologies: ['GLPI'],
+    documentationUrl: '',
+    demoUrl: '',
   },
 ])
 

@@ -162,6 +162,22 @@ const projects = ref<Project[]>([
     documentationUrl: './docs/Livrable Organizeur.pdf',
     demoUrl: './docs/DocTechniqueOrganizeur.pdf',
   },
+  {
+    id: 3,
+    title: "GLPI",
+    date: '2024',
+    description:
+      "Application de gestion des services informatiques permettant aux utilisateurs de suivre les incidents",
+    image: './images/glpi.png',
+    features: [
+      "Gestion des tickets et des incidents",
+      'Suivi et gestion des actifs IT',
+      'Rapports et analyses détaillés',
+    ],
+    technologies: ['GLPI'],
+    documentationUrl: '',
+    demoUrl: '',
+  },
 ])
 </script>
 
