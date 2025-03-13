@@ -70,14 +70,14 @@
       title: 'BUT GEII - Génie Electrique et Informatique Industrielle',
       institution: 'IUT Paul Sabatier',
       description: 'Formation approfondie en génie électrique, informatique industrielle et automatisme, axée sur la conception, la mise en œuvre et la maintenance de systèmes électroniques et informatiques pour les applications industrielles.',
-      skills: ['HTML/CSS', 'JavaScript', 'Responsive Design']
+      skills: ['C++', 'Automatisme & Systèmes Embarqués', 'Électricité & Électronique']
     },
     {
       period: '2023 - 2024',
       title: 'BTS SIO - Services Informatiques aux Organisations',
       institution: 'ESICAD',
       description: 'Formation approfondie en systèmes informatiques et technologies de l\'information, avec une approche orientée vers le développement, la gestion et l\'optimisation des infrastructures réseaux et des systèmes informatiques.',
-      skills: ['Développement Web', 'Typescript', 'PHP', 'Bases de données', 'Cybersécurité']
+      skills: ['Développement Web', 'Typescript', 'PHP', 'Bases de données']
     },
     {
       period: 'Juillet 2024 - Aout 2024',
@@ -100,7 +100,7 @@
       title: 'BTS SIO - Services Informatiques aux Organisations - Option SLAM ',
       institution: 'ESICAD',
       description: 'Formation approfondie en développement d\'applications web et mobile avec une forte orientation vers la programmation et l\' intégration d\'applications adaptées aux besoins des entreprises. Et à la gestion de projets informatiques ',
-      skills: ['Développement Web', 'Typescript', 'PHP', 'Bases de données', 'Cybersécurité']
+      skills: ['Développement Web et Mobile', 'Typescript', 'PHP', 'Bases de données', 'Cybersécurité', 'Responsive Design']
     },
   ]);
   </script>
