@@ -163,7 +163,7 @@ const projects = ref<Project[]>([
     demoUrl: './docs/DocTechniqueOrganizeur.pdf',
   },
   {
-    id: 3,
+    id: 4,
     title: "GLPI",
     date: '2024',
     description:
@@ -177,6 +177,22 @@ const projects = ref<Project[]>([
     technologies: ['GLPI'],
     documentationUrl: '',
     demoUrl: '',
+  },
+  {
+    id: 5,
+    title: "Carist-Si",
+    date: '2025',
+    description:
+      "Une application mobile de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
+    image: './images/carist.png',
+    features: [
+      "Gestion des emplacements de colis",
+      'Création des emplacements',
+      'Création des colis',
+    ],
+    technologies: ['Kotlin', 'Application mobile'],
+    documentationUrl: './docs/',
+    demoUrl: './docs/',
   },
 ])
 </script>

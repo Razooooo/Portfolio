@@ -24,9 +24,7 @@
           </p>
 
           <p class="bio reveal-on-scroll reveal-right reveal-delay-3">
-            Toujours en quête de perfectionnement, j'explore les dernières technologies pour
-            concevoir des solutions modernes adaptées aux besoins des utilisateurs. Après deux
-            années de formation en BTS Services Informatiques aux Organisations, j'aspire à
+            Après deux années de formation en BTS Services Informatiques aux Organisations, j'aspire à
             approfondir mes connaissances et à relever de nouveaux défis dans ces domaines en
             constante évolution.
           </p>
@@ -364,6 +362,16 @@ const projects = ref<Project[]>([
     technologies: ['GLPI'],
     documentationUrl: '',
     demoUrl: '',
+  },
+  {
+    id: 5,
+    title: "Carist-Si",
+    description:
+      "Une application mobile de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
+    image: './images/carist.png',
+    technologies: ['Kotlin', 'Application mobile'],
+    documentationUrl: './docs/',
+    demoUrl: './docs/',
   },
 ])
 
