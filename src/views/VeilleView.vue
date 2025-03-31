@@ -78,14 +78,6 @@
     },
     {
       id: 2,
-      name: "TLDR",
-      description: "Blog dédié au CSS et aux technologies web frontend avec des articles détaillés sur les dernières pratiques et tendances.",
-      image: "./images/tldr.png",
-      url: "https://tldr.tech/",
-      tags: ["Tech", "Innovation", "Tendances"]
-    },
-    {
-      id: 3,
       name: "The Hacker News",
       description: "The Hacker News est une ressource clé pour suivre les dernières actualités en cybersécurité, couvrant les vulnérabilités, les menaces et les incidents majeurs. Idéal pour rester informé des tendances et des évolutions en sécurité informatique.",
       image: "./images/hacker.png",
@@ -93,7 +85,7 @@
       tags: ["Cybersécurité", "Vulnérabilités", "Hacking"]
     },
     {
-      id: 4,
+      id: 3,
       name: "Reddit – programming",
       description: "Ce subreddit est dédié aux discussions autour du développement informatique. C'est une mine d'or pour les articles, les tutoriels et les discussions sur les nouvelles tendances.",
       image: "./images/reddit.png",
@@ -101,15 +93,7 @@
       tags: ["Communauté", "Programmation", "Open Source"]
     },
     {
-      id: 5,
-      name: "TechCrunch",
-      description: "TechCrunch couvre de près les avancées en intelligence artificielle (IA), en mettant en avant les nouvelles technologies, les levées de fonds des startups IA, et les impacts de l’IA sur différents secteurs comme la santé, la finance ou les médias.",
-      image: "./images/tech.png",
-      url: "https://techcrunch.com/",
-      tags: ["Startups", "Intelligence Artificielle", "Big Tech"]
-    },
-    {
-      id: 6,
+      id: 4,
       name: "ANSSI",
       description: "Autorité nationale en matière de sécurité et de défense des systèmes d'information en France.",
       image: "./images/anssi.png",

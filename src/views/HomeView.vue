@@ -136,19 +136,19 @@
 
     <!-- Section Épreuve E5 -->
     <section class="e5-section">
-      <h2 class="section-title reveal-on-scroll reveal-bottom">Épreuve E5</h2>
+      <h2 class="section-title reveal-on-scroll reveal-bottom">Épreuve E6</h2>
       
       <div class="e5-container">
         <div class="e5-text reveal-on-scroll reveal-left">
-          <h3>Présentation de l'Épreuve E5</h3>
+          <h3>Présentation de l'Épreuve E6</h3>
           <p>
-            L'épreuve E5 du BTS SIO est une épreuve professionnelle qui évalue les compétences
+            L'épreuve E6 du BTS SIO est une épreuve professionnelle qui évalue les compétences
             acquises en situation réelle. Elle consiste à présenter des projets développés durant
             la formation qui démontrent mes capacités à concevoir et réaliser des applications web et mobile
           </p>
           <p>
             Ces projets illustrent ma maîtrise des technologies, des méthodes de développement
-            et ma capacité à répondre aux besoins des utilisateurs. Et pour cela j'ai choisi NurseCare et ... 
+            et ma capacité à répondre aux besoins des utilisateurs. Et pour cela j'ai choisi NurseCare et Carist-Si
           </p>
         </div>
         
@@ -194,11 +194,11 @@
     </section>
     <!-- Section Épreuve E4 - À ajouter après la section Épreuve E5 -->
 <section class="e4-section">
-  <h2 class="section-title reveal-on-scroll reveal-bottom">Épreuve E4</h2>
+  <h2 class="section-title reveal-on-scroll reveal-bottom">Épreuve E5</h2>
   
   <div class="e4-container">
     <div class="e4-content reveal-on-scroll reveal-bottom">
-      <h3>Présentation de l'Épreuve E4</h3>
+      <h3>Présentation de l'Épreuve E5</h3>
       <p>
         Cette épreuve met en avant mon parcours de professionnalisation et la mise en pratique 
         des connaissances acquises durant ma formation.
@@ -207,7 +207,7 @@
       <div class="e4-buttons">
         <a href="./docs/E4- Tableau de synthèse Nathan.pdf" target="_blank" class="e4-button excel-button">
           <span class="button-icon">📊</span>
-          <span class="button-text">Tableau de Synthèse E4</span>
+          <span class="button-text">Tableau de Synthèse E5</span>
         </a>
       </div>
     </div>
@@ -379,7 +379,7 @@ const projects = ref<Project[]>([
 const e5Projects = ref<Project[]>([
   {
     id: 101,
-    title: "Projet E5 - NurseCare",
+    title: "Projet E6 - NurseCare",
     description: "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées",
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
@@ -388,12 +388,12 @@ const e5Projects = ref<Project[]>([
   },
   {
     id: 102,
-    title: "Projet E5 - DeliverEasy",
-    description: "Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.",
-    image: './images/delivereasy.png',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Documentation_DeliverEasy.pdf',
-    demoUrl: './docs/DocTechniqueDeliver.pdf',
+    title: "Projet E6 - Carist-Si",
+    description: "Une application mobile de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
+    image: './images/carist.png',
+    technologies: ['Kotlin', 'Application mobile'],
+    documentationUrl: './docs/',
+    demoUrl: './docs/',
   }
 ])
 
