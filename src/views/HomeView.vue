@@ -330,7 +330,7 @@ const projects = ref<Project[]>([
       "Application de gestion des services informatiques permettant aux utilisateurs de suivre les incidents",
     image: './images/glpi.png',
     technologies: ['GLPI'],
-    documentationUrl: './docs/Livrable GLPI.pdf',
+    documentationUrl: './docs/LivrableGLPI.pdf',
     demoUrl: '',
   },
   {
@@ -340,7 +340,7 @@ const projects = ref<Project[]>([
       "Application web de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement",
     image: './images/logoOrganizeur.avif',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable Organizeur.pdf',
+    documentationUrl: './docs/LivrableOrganizeur.pdf',
     demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
   {
@@ -350,7 +350,7 @@ const projects = ref<Project[]>([
       'Application web de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
     image: './images/delivereasy.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable projet Deliver.pdf',
+    documentationUrl: './docs/LivrableDeliverEasy.pdf',
     demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
   {
@@ -360,7 +360,7 @@ const projects = ref<Project[]>([
       "Application web de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable NurseCare.pdf',
+    documentationUrl: './docs/LivrableNurseCare.pdf',
     demoUrl: './docs/DocTechniqueNurseCare2.pdf',
   },
   {
@@ -383,7 +383,7 @@ const e5Projects = ref<Project[]>([
     description: "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées",
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable NurseCare.pdf',
+    documentationUrl: './docs/Livrable_NurseCare.pdf',
     demoUrl: './docs/DocTechniqueNurseCare2.pdf',
   },
   {

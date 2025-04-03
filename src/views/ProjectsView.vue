@@ -121,7 +121,7 @@ const projects = ref<Project[]>([
       'Rapports et analyses détaillés',
     ],
     technologies: ['GLPI'],
-    documentationUrl: './docs/Livrable GLPI.pdf',
+    documentationUrl: './docs/LivrableGLPI.pdf',
     demoUrl: '',
   },
   {
@@ -138,7 +138,7 @@ const projects = ref<Project[]>([
       "Partage d'événements",
     ],
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable Organizeur.pdf',
+    documentationUrl: './docs/LivrableOrganizeur.pdf',
     demoUrl: './docs/DocTechniqueOrganizeur.pdf',
   },
   {
@@ -156,7 +156,7 @@ const projects = ref<Project[]>([
       'Système de notation',
     ],
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable projet Deliver.pdf',
+    documentationUrl: './docs/LivrableDeliverEasy.pdf',
     demoUrl: './docs/DocTechniqueDeliver.pdf',
   },
   {
@@ -174,7 +174,7 @@ const projects = ref<Project[]>([
       'Interface responsive',
     ],
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable NurseCare.pdf',
+    documentationUrl: './docs/LivrableNurseCare.pdf',
     demoUrl: './docs/DocTechniqueNurseCare2.pdf',
   },
   {
