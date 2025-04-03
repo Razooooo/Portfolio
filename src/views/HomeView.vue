@@ -331,7 +331,7 @@ const projects = ref<Project[]>([
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.pdf',
   },
   {
     id: 2,
@@ -384,7 +384,7 @@ const e5Projects = ref<Project[]>([
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.pdf',
   },
   {
     id: 102,

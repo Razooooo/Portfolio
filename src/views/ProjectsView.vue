@@ -124,7 +124,7 @@ const projects = ref<Project[]>([
     ],
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
     documentationUrl: './docs/Livrable NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare.docx.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.pdf',
   },
   {
     id: 2,
