@@ -113,7 +113,7 @@ const projects = ref<Project[]>([
     title: 'NurseCare',
     date: '2025',
     description:
-      "Application de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
+      "Application web de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
     image: './images/nursecare.png',
     features: [
       'Gestion des dossiers patients',
@@ -124,14 +124,14 @@ const projects = ref<Project[]>([
     ],
     technologies: ['Vue.js', 'TypeScript', 'Node.js', 'MySQL'],
     documentationUrl: './docs/Livrable NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare2.pdf',
   },
   {
     id: 2,
     title: 'DeliverEasy',
     date: '2024',
     description:
-      'Application de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
+      'Application web de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
     image: './images/delivereasy.png',
     features: [
       'Commande en ligne',
@@ -149,7 +149,7 @@ const projects = ref<Project[]>([
     title: "Organi'zeur",
     date: '2024',
     description:
-      "Application de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement.",
+      "Application web de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement.",
     image: './images/logoOrganizeur.avif',
     features: [
       "Création et gestion d'événements",
@@ -175,7 +175,7 @@ const projects = ref<Project[]>([
       'Rapports et analyses détaillés',
     ],
     technologies: ['GLPI'],
-    documentationUrl: '',
+    documentationUrl: './docs/Livrable GLPI.pdf',
     demoUrl: '',
   },
   {
@@ -183,7 +183,7 @@ const projects = ref<Project[]>([
     title: "Carist-Si",
     date: '2025',
     description:
-      "Une application mobile de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
+      "Une application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
     image: './images/carist.png',
     features: [
       "Gestion des emplacements de colis",
