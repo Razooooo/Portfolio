@@ -325,36 +325,6 @@ const skillCategories = ref<SkillCategory[]>([
 const projects = ref<Project[]>([
   {
     id: 1,
-    title: 'NurseCare',
-    description:
-      "Application web de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
-    image: './images/nursecare.png',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare2.pdf',
-  },
-  {
-    id: 2,
-    title: 'DeliverEasy',
-    description:
-      'Application web de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
-    image: './images/delivereasy.png',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable projet Deliver.pdf',
-    demoUrl: './docs/DocTechniqueDeliver.pdf',
-  },
-  {
-    id: 3,
-    title: "Organi'zeur",
-    description:
-      "Application web de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement",
-    image: './images/logoOrganizeur.avif',
-    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
-    documentationUrl: './docs/Livrable Organizeur.pdf',
-    demoUrl: './docs/DocTechniqueDeliver.pdf',
-  },
-  {
-    id: 4,
     title: "GLPI",
     description:
       "Application de gestion des services informatiques permettant aux utilisateurs de suivre les incidents",
@@ -364,12 +334,42 @@ const projects = ref<Project[]>([
     demoUrl: '',
   },
   {
+    id: 2,
+    title: "Organi'zeur",
+    description:
+      "Application web de gestion d'événements et de planification permettant aux utilisateurs d'organiser leur temps efficacement",
+    image: './images/logoOrganizeur.avif',
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
+    documentationUrl: './docs/Livrable Organizeur.pdf',
+    demoUrl: './docs/DocTechniqueDeliver.pdf',
+  },
+  {
+    id: 3,
+    title: 'DeliverEasy',
+    description:
+      'Application web de livraison optimisant les trajets des livreurs et la gestion de ceux-ci.',
+    image: './images/delivereasy.png',
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
+    documentationUrl: './docs/Livrable projet Deliver.pdf',
+    demoUrl: './docs/DocTechniqueDeliver.pdf',
+  },
+  {
+    id: 4,
+    title: 'NurseCare',
+    description:
+      "Application web de gestion pour cabinet d'infirmiers permettant le suivi des patients et la planification des tournées.",
+    image: './images/nursecare.png',
+    technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
+    documentationUrl: './docs/Livrable NurseCare.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare2.pdf',
+  },
+  {
     id: 5,
     title: "Carist-Si",
     description:
-      "Une application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
+      "Application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
     image: './images/carist.png',
-    technologies: ['Kotlin', 'Application mobile'],
+    technologies: ['Kotlin', 'Application lourde'],
     documentationUrl: './docs/',
     demoUrl: './docs/',
   },
@@ -389,9 +389,9 @@ const e5Projects = ref<Project[]>([
   {
     id: 102,
     title: "Projet E6 - Carist-Si",
-    description: "Une application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
+    description: "Application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
     image: './images/carist.png',
-    technologies: ['Kotlin', 'Application mobile'],
+    technologies: ['Kotlin', 'Application lourde'],
     documentationUrl: './docs/',
     demoUrl: './docs/',
   }
