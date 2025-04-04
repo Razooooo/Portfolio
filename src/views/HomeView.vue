@@ -361,7 +361,7 @@ const projects = ref<Project[]>([
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/LivrableNurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare2.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.pdf',
   },
   {
     id: 5,
@@ -369,9 +369,9 @@ const projects = ref<Project[]>([
     description:
       "Application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
     image: './images/carist.png',
-    technologies: ['Kotlin', 'Application lourde'],
-    documentationUrl: './docs/',
-    demoUrl: './docs/',
+    technologies: ['Kotlin', 'Application lourde', 'MySQL'],
+    documentationUrl: './docs/LivrableCarist-Si.pdf',
+    demoUrl: './docs/DocTechniqueCarist-SI.pdf',
   },
 ])
 
@@ -384,16 +384,16 @@ const e5Projects = ref<Project[]>([
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable_NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare2.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.pdf',
   },
   {
     id: 102,
     title: "Projet E6 - Carist-Si",
     description: "Application lourde de gestion des stocks et des emplacements de colis permettant aux caristes de gérer efficacement l'entrepôt.",
     image: './images/carist.png',
-    technologies: ['Kotlin', 'Application lourde'],
-    documentationUrl: './docs/',
-    demoUrl: './docs/',
+    technologies: ['Kotlin', 'Application lourde', 'MySQL'],
+    documentationUrl: './docs/LivrableCarist-Si.pdf',
+    demoUrl: './docs/DocTechniqueCarist-SI.pdf',
   }
 ])
 

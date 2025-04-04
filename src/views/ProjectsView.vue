@@ -175,7 +175,7 @@ const projects = ref<Project[]>([
     ],
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/LivrableNurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare2.pdf',
+    demoUrl: './docs/DocTechniqueNurseCare.pdf',
   },
   {
     id: 5,
@@ -189,9 +189,9 @@ const projects = ref<Project[]>([
       'Création des emplacements',
       'Création des colis',
     ],
-    technologies: ['Kotlin', 'Application lourde'],
-    documentationUrl: './docs/',
-    demoUrl: './docs/',
+    technologies: ['Kotlin', 'Application lourde', 'MySQL'],
+    documentationUrl: './docs/LivrableCarist-Si.pdf',
+    demoUrl: './docs/DocTechniqueCarist-SI.pdf',
   },
 ])
 </script>
