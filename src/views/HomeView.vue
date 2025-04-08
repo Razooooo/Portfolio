@@ -341,7 +341,7 @@ const projects = ref<Project[]>([
     image: './images/logoOrganizeur.avif',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/LivrableOrganizeur.pdf',
-    demoUrl: './docs/DocTechniqueDeliver.pdf',
+    demoUrl: './docs/DocFonctionnelleDeliver.pdf',
   },
   {
     id: 3,
@@ -351,7 +351,7 @@ const projects = ref<Project[]>([
     image: './images/delivereasy.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/LivrableDeliverEasy.pdf',
-    demoUrl: './docs/DocTechniqueDeliver.pdf',
+    demoUrl: './docs/DocFonctionnelleDeliver.pdf',
   },
   {
     id: 4,
@@ -361,7 +361,7 @@ const projects = ref<Project[]>([
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/LivrableNurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare.pdf',
+    demoUrl: './docs/DocFonctionnelleNurseCare.pdf',
   },
   {
     id: 5,
@@ -371,7 +371,7 @@ const projects = ref<Project[]>([
     image: './images/carist.png',
     technologies: ['Kotlin', 'Application lourde', 'MySQL'],
     documentationUrl: './docs/LivrableCarist-Si.pdf',
-    demoUrl: './docs/DocTechniqueCarist-SI.pdf',
+    demoUrl: './docs/DocFonctionnelleCarist-SI.pdf',
   },
 ])
 
@@ -384,7 +384,7 @@ const e5Projects = ref<Project[]>([
     image: './images/nursecare.png',
     technologies: ['Vue.js', 'TypeScript', 'Express.js', 'MySQL'],
     documentationUrl: './docs/Livrable_NurseCare.pdf',
-    demoUrl: './docs/DocTechniqueNurseCare.pdf',
+    demoUrl: './docs/DocFonctionnelleNurseCare.pdf',
   },
   {
     id: 102,
@@ -393,7 +393,7 @@ const e5Projects = ref<Project[]>([
     image: './images/carist.png',
     technologies: ['Kotlin', 'Application lourde', 'MySQL'],
     documentationUrl: './docs/LivrableCarist-Si.pdf',
-    demoUrl: './docs/DocTechniqueCarist-SI.pdf',
+    demoUrl: './docs/DocFonctionnelleCarist-SI.pdf',
   }
 ])
 
