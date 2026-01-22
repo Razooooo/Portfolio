@@ -16,6 +16,17 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 6,
+    title: 'Mistral Automotive',
+    description: 'Site Vitrine',
+    longDescription: 'Site vitrine d\'un revendeur de pièce automobile à Madagascar.',
+    technologies: ['Vue.js'],
+    year: '2025',
+    features: ['Filtre', 'Contact'],
+    image: '🌐',
+    color: '#3b82f6',
+  },
+  {
     id: 1,
     title: 'NurseCare',
     description: 'Application de gestion pour cabinet d\'infirmiers',
@@ -74,7 +85,7 @@ const projects: Project[] = [
     image: '🎫',
     color: '#ffd93d',
     demoUrl: '/docs/DocFonctionnelleGLPI.pdf'
-  }
+  },
 ]
 
 const selectedProject = ref<Project | null>(null)
