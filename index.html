@@ -1,31 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
-    <script>
-      // Vérifier s'il y a une redirection à traiter
-      const redirect = sessionStorage.getItem('redirect');
-      if (redirect) {
-        // Effacer la redirection du sessionStorage
-        sessionStorage.removeItem('redirect');
-        // Pousser le chemin dans l'historique sans recharger la page
-        history.pushState(null, null, redirect);
-      }
-    </script>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./images/logoP.jpg" sizes="128x128" />
-    <!-- Rétablir un viewport responsive standard -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Nathan</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Supprimer le script qui force le mode desktop -->
-    <script type="module" crossorigin src="/Portfolio/assets/index-Cvk3D8Ki.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-LE2zhtK7.css">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Razafindrakoto | Dev Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/Portfolio/assets/index-msaOnJMg.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-hut55zE4.css">
   </head>
   <body>
     <div id="app"></div>
-    <!-- Supprimer le script qui force les dimensions desktop -->
   </body>
 </html>
