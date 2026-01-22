@@ -10,8 +10,10 @@
     "deploy": "npm run build && shx cp dist/index.html dist/404.html && gh-pages -d dist"
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^2.0.12",
     "vue": "^3.4.0",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue3-lottie": "^3.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

@@ -1,25 +1,26 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
 
 const route = useRoute()
 const isMenuOpen = ref(false)
 const isLoaded = ref(false)
 const currentTime = ref('')
+let timeInterval: number | null = null
 
 const updateTime = () => {
   const now = new Date()
-  currentTime.value = now.toLocaleTimeString('fr-FR', {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  })
+  currentTime.value = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })
 }
 
 onMounted(() => {
   isLoaded.value = true
   updateTime()
-  setInterval(updateTime, 1000)
+  timeInterval = setInterval(updateTime, 1000)
+})
+
+onUnmounted(() => {
+  if (timeInterval) clearInterval(timeInterval)
 })
 
 const toggleMenu = () => {
@@ -71,7 +72,7 @@ const closeMenu = () => {
         <div class="header-right">
           <span class="status-bar">
             <span class="status-dot"></span>
-            <span class="status-text">{{ currentTime }}</span>
+            {{ currentTime }}
           </span>
 
           <button class="menu-toggle" @click="toggleMenu" :class="{ active: isMenuOpen }">
@@ -381,8 +382,8 @@ const closeMenu = () => {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
-  50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0, 255, 136, 0); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .menu-toggle {
