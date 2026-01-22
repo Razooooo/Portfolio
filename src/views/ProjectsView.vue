@@ -25,6 +25,7 @@ const projects: Project[] = [
     features: ['Filtre', 'Contact'],
     image: '🌐',
     color: '#3b82f6',
+    demoUrl: 'https://mistral-automotive.com/'
   },
   {
     id: 1,
