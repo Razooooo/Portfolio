@@ -22,7 +22,7 @@ const timeline: TimelineItem[] = [
     period: 'Sept. 2026 — Juil. 2028',
     upcoming: true,
     description:
-      'Admis en apprentissage. Je recherche une alternance de développeur full stack pour la rentrée de septembre 2026 — rythme 2 semaines en entreprise / 1 semaine en formation.',
+      'Admis en apprentissage. Je recherche une alternance à Paris ou Toulouse en tant que développeur full stack pour la rentrée de septembre 2026 — rythme 2 semaines en entreprise / 1 semaine en formation.',
     highlights: [
       'Conception et modélisation de l\'architecture logicielle',
       'Intégration et déploiement continu dans le SI'

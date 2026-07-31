@@ -51,7 +51,7 @@ const stats = [
           Développeur full stack, admis en Mastère Dev. Manager Full Stack
           à l'<strong>Efrei</strong>. Je conçois des applications web et mobile. 
           Je sors de six mois de développement JavaScript full stack chez <strong>Buddl</strong>.
-          Et suis actuellement à la recherche d'une alternance pour septembre 2026 afin de poursuivre ma formation.
+          Et je suis actuellement à la recherche d'une alternance à Paris ou Toulouse pour septembre 2026 afin de poursuivre ma formation.
         </p>
 
         <p v-reveal="0.2" class="hero-rhythm">
@@ -141,7 +141,7 @@ const stats = [
         <div>
           <h2 class="cta-title">Une alternance à pourvoir<br />pour septembre 2026&nbsp;?</h2>
           <p class="cta-text">
-            Développeur full stack, 2 semaines en entreprise / 1 semaine en formation.
+            Développeur full stack, 2 semaines en entreprise / 1 semaine en formation. Paris ou Toulouse.
           </p>
         </div>
         <a
