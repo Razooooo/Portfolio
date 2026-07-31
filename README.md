@@ -8,7 +8,6 @@ Portfolio personnel
 - TypeScript
 - Vite
 - Vue Router
-- ogl (fond animé WebGL)
 
 ## Installation
 
