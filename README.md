@@ -1,6 +1,7 @@
 # Portfolio Nathan Razafindrakoto
 
-Portfolio personnel avec un style développeur moderne.
+Portfolio personnel — direction visuelle éditoriale (papier crème, typographie
+serif, fond dégradé animé en WebGL).
 
 ## Technologies
 
@@ -8,6 +9,7 @@ Portfolio personnel avec un style développeur moderne.
 - TypeScript
 - Vite
 - Vue Router
+- ogl (fond animé WebGL)
 
 ## Installation
 

@@ -10,7 +10,15 @@
       "Bash(npm install:*)",
       "Bash(npm run deploy:*)",
       "Bash(copy:*)",
-      "Bash(npx gh-pages:*)"
+      "Bash(npx gh-pages:*)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/ogl/package.json'\\).version\\)\")",
+      "Bash(npx vue-tsc *)",
+      "Bash(python -c \"import pypdf; print\\('ok'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import pypdf; print\\(pypdf.__version__\\)\")",
+      "Bash(python -m pip install pypdf --quiet)",
+      "Bash(python -c ' *)"
     ]
   }
 }
