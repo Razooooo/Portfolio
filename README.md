@@ -27,6 +27,12 @@ npm run dev
 npm run build
 ```
 
+## Déploiement sur github page
+
+```bash
+npm run deploy
+```
+
 ## Lien
 
 ```bash
