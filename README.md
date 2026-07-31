@@ -1,7 +1,6 @@
 # Portfolio Nathan Razafindrakoto
 
-Portfolio personnel — direction visuelle éditoriale (papier crème, typographie
-serif, fond dégradé animé en WebGL).
+Portfolio personnel 
 
 ## Technologies
 
