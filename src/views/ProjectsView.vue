@@ -26,7 +26,9 @@ const projects: Project[] = [
       'Gestion des abonnements',
       'Espace client',
       'Chatbot de support'
-    ]
+    ],
+    demoUrl: 'https://projet-cyna-dev-csa3.vercel.app/',
+    demoLabel: 'Voir le site'
   },
   {
     id: 6,
