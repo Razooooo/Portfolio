@@ -33,6 +33,24 @@ const projects: Project[] = [
     demoLabel: 'Voir la démo'
   },
   {
+    id: 9,
+    title: 'TrackMyApply',
+    description: 'Suivi de candidatures pour la recherche d\'emploi et d\'alternance.',
+    longDescription:
+      'Application web full stack réalisée en équipe, qui remplace le tableau Excel de suivi de candidatures : une fiche par entreprise, des statuts, des relances, les documents envoyés et des indicateurs. Elle est complétée par une extension Chrome et une API documentée.',
+    technologies: ['React', 'TypeScript', 'Express.js', 'MongoDB'],
+    year: '2026',
+    features: [
+      'Suivi des candidatures et des relances',
+      'Espace documents (CV, lettres)',
+      'Tableau de bord et indicateurs',
+      'Extension Chrome',
+      'API documentée (Swagger) et testée'
+    ],
+    demoUrl: 'https://github.com/Enzolm/FullstackJS_candidature_efrei',
+    demoLabel: 'Voir le code'
+  },
+  {
     id: 7,
     title: 'CYNA DEV',
     description: 'Plateforme e-commerce SaaS dédiée à la cybersécurité.',
