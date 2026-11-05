@@ -33,6 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      # GitHub Pages n'a pas de routeur : pour une adresse directe comme /Portfolio/projets,
+      # il sert 404.html. On y met l'application, qui affiche alors la bonne page.
+      - name: SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
