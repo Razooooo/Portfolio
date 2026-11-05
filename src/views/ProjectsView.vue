@@ -11,6 +11,7 @@ interface Project {
   features: string[]
   demoUrl?: string
   demoLabel?: string
+  images?: { src: string; alt: string; caption: string }[]
 }
 
 const projects: Project[] = [
@@ -30,7 +31,15 @@ const projects: Project[] = [
       'Tests automatisés'
     ],
     demoUrl: 'https://impex-ivo5.vercel.app/',
-    demoLabel: 'Voir la démo'
+    demoLabel: 'Voir la démo',
+    images: [
+      { src: '/projects/impex/accueil.jpg', alt: 'Page d\'accueil d\'IMPEX', caption: 'Page d\'accueil' },
+      { src: '/projects/impex/client.jpg', alt: 'Tableau de bord client avec véhicule et rendez-vous', caption: 'Espace client' },
+      { src: '/projects/impex/reservation.jpg', alt: 'Formulaire de réservation guidée', caption: 'Réservation guidée' },
+      { src: '/projects/impex/admin.jpg', alt: 'Espace garage avec la liste des rendez-vous', caption: 'Espace garage' },
+      { src: '/projects/impex/calendrier.jpg', alt: 'Calendrier du garage par mécanicien', caption: 'Calendrier par mécanicien' },
+      { src: '/projects/impex/mecano.jpg', alt: 'Espace mécanicien avec ses interventions', caption: 'Espace mécanicien' }
+    ]
   },
   {
     id: 9,
@@ -277,6 +286,15 @@ onBeforeUnmount(() => {
           <h2 class="sheet-title">{{ selectedProject.title }}</h2>
           <p class="sheet-description">{{ selectedProject.longDescription }}</p>
 
+          <ul v-if="selectedProject.images?.length" class="gallery" aria-label="Aperçu du projet">
+            <li v-for="image in selectedProject.images" :key="image.src">
+              <a :href="resolveUrl(image.src)" target="_blank" rel="noopener">
+                <img :src="resolveUrl(image.src)" :alt="image.alt" loading="lazy" />
+              </a>
+              <span class="gallery-caption">{{ image.caption }}</span>
+            </li>
+          </ul>
+
           <div class="sheet-grid">
             <section>
               <h3 class="sheet-label">Technologies</h3>
@@ -519,6 +537,41 @@ onBeforeUnmount(() => {
   margin-bottom: 2.25rem;
 }
 
+/* Galerie : on fait défiler horizontalement, chaque image s'aligne au bord */
+.gallery {
+  list-style: none;
+  display: flex;
+  gap: 0.85rem;
+  margin: 0 -3rem 2.25rem;
+  padding: 0 3rem 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 3rem;
+}
+
+.gallery li {
+  flex: 0 0 82%;
+  scroll-snap-align: start;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper-deep);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-caption {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .sheet-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -626,6 +679,19 @@ onBeforeUnmount(() => {
   .sheet-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  /* La fiche a moins de marge sur téléphone : la galerie suit */
+  .gallery {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    scroll-padding: 0 1.5rem;
+  }
+
+  .gallery li {
+    flex-basis: 88%;
   }
 }
 </style>
