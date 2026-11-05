@@ -39,7 +39,7 @@ const stats = [
       <div class="hero-text">
         <p v-reveal class="availability">
           <span class="availability-dot"></span>
-          Recherche une alternance — rentrée septembre 2026
+          <span>Recherche une alternance ou un stage — année scolaire <span class="nowrap">2026-2027</span></span>
         </p>
 
         <h1 v-reveal="0.08" class="display hero-title">
@@ -51,11 +51,11 @@ const stats = [
           Développeur full stack, admis en Mastère Dev. Manager Full Stack
           à l'<strong>Efrei</strong>. Je conçois des applications web et mobile. 
           Je sors de six mois de développement JavaScript full stack chez <strong>Buddl</strong>.
-          Et je suis actuellement à la recherche d'une alternance à Paris ou Toulouse pour septembre 2026 afin de poursuivre ma formation.
+          Et je suis actuellement à la recherche d'une alternance ou d'un stage à Paris ou Toulouse pour l'année scolaire 2026-2027 afin de poursuivre ma formation.
         </p>
 
         <p v-reveal="0.2" class="hero-rhythm">
-          Rythme d'alternance&nbsp;: 2 semaines en entreprise / 1 semaine en formation.
+          Alternance ou stage. En alternance&nbsp;: 2 semaines en entreprise / 1 semaine en formation.
         </p>
 
         <div v-reveal="0.24" class="hero-actions">
@@ -139,9 +139,9 @@ const stats = [
     <section class="container">
       <div v-reveal class="cta">
         <div>
-          <h2 class="cta-title">Une alternance à pourvoir<br />pour septembre 2026&nbsp;?</h2>
+          <h2 class="cta-title">Une alternance ou un stage à pourvoir<br />pour l'année scolaire <span class="nowrap">2026-2027&nbsp;?</span></h2>
           <p class="cta-text">
-            Développeur full stack, 2 semaines en entreprise / 1 semaine en formation. Paris ou Toulouse.
+            Développeur full stack. En alternance&nbsp;: 2 semaines en entreprise / 1 semaine en formation. Paris ou Toulouse.
           </p>
         </div>
         <a
@@ -420,6 +420,10 @@ const stats = [
 .cta-text {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 /* ---------- Responsive ---------- */

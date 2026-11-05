@@ -159,8 +159,11 @@ h1, h2, h3, h4 {
   padding: 0 2rem;
 }
 
+/* Seulement le haut et le bas : une section est souvent aussi un .container,
+   dont les marges latérales ne doivent pas être écrasées. */
 .section {
-  padding: 5.5rem 0;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
 }
 
 .rule {
@@ -256,7 +259,7 @@ a:hover .link-arrow svg {
 
 @media (max-width: 768px) {
   .container { padding: 0 1.25rem; }
-  .section { padding: 3.5rem 0; }
+  .section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

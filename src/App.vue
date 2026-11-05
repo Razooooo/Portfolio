@@ -116,7 +116,7 @@ const closeMenu = () => {
         <div class="footer-brand">
           <span class="footer-name">Nathan Razafindrakoto</span>
           <span class="footer-role">
-            Développeur full stack — alternance septembre 2026
+            Développeur full stack — alternance ou stage 2026-2027
           </span>
         </div>
 
@@ -434,6 +434,10 @@ const closeMenu = () => {
 @media (max-width: 560px) {
   .clock { display: none; }
   .wordmark { font-size: 1.05rem; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.25rem;
+  }
 }
 </style>

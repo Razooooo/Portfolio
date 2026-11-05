@@ -35,7 +35,7 @@ const projects: Project[] = [
   {
     id: 9,
     title: 'TrackMyApply',
-    description: 'Suivi de candidatures pour la recherche d\'emploi et d\'alternance.',
+    description: 'Suivi de candidatures pour la recherche d\'emploi, d\'alternance ou de stage.',
     longDescription:
       'Application web full stack réalisée en équipe, qui remplace le tableau Excel de suivi de candidatures : une fiche par entreprise, des statuts, des relances, les documents envoyés et des indicateurs. Elle est complétée par une extension Chrome et une API documentée.',
     technologies: ['React', 'TypeScript', 'Express.js', 'MongoDB'],
@@ -333,6 +333,7 @@ onBeforeUnmount(() => {
 /* ---------- Filtres ---------- */
 .filters {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
   padding-bottom: 1.25rem;
@@ -364,6 +365,7 @@ onBeforeUnmount(() => {
 
 .filter-count {
   margin-left: auto;
+  white-space: nowrap;
   font-size: 0.78rem;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
