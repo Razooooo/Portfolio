@@ -26,7 +26,7 @@ const languages = [
 ]
 
 const stats = [
-  { value: '7', label: 'Projets réalisés' },
+  { value: '8', label: 'Projets réalisés' },
   { value: '3', label: 'Stages en entreprise' },
   { value: '2028', label: 'Diplôme Bac+5 visé' }
 ]

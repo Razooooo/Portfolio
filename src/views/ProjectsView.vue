@@ -15,6 +15,24 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 8,
+    title: 'IMPEX',
+    description: 'Prise de rendez-vous pour un garage Land Rover à Antananarivo.',
+    longDescription:
+      'Application web de prise de rendez-vous pour un garage : le client réserve un créneau réellement disponible, le garage assigne un mécanicien et suit l\'intervention. Le site en ligne est une démonstration avec des données fictives, remises à zéro chaque jour.',
+    technologies: ['Vue.js', 'Express.js', 'MongoDB', 'Docker'],
+    year: '2026',
+    features: [
+      'Créneaux calculés selon les mécaniciens et la durée',
+      'Espaces client, garage et mécanicien',
+      'Calendrier, absences et fermetures',
+      'Reprogrammation des rendez-vous',
+      'Tests automatisés'
+    ],
+    demoUrl: 'https://impex-ivo5.vercel.app/',
+    demoLabel: 'Voir la démo'
+  },
+  {
     id: 7,
     title: 'CYNA DEV',
     description: 'Plateforme e-commerce SaaS dédiée à la cybersécurité.',
